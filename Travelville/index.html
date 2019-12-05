@@ -48,6 +48,54 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
 
+    <!-- Section: Slider -->
+    <section class="slider">
+      <ul class="slides">
+        <li>
+          <img
+            src="https://images.pexels.com/photos/2949717/pexels-photo-2949717.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            alt=""
+          />
+          <div class="caption center-align">
+            <h2>Take Your Deam Vacation</h2>
+            <h5 class="light grey-text text-lighten-3 hide-on-small-only">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate architecto magni rerum.
+            </h5>
+            <a href="" class="btn btn-large">Learn More</a>
+          </div>
+        </li>
+        <li>
+          <img
+            src="https://images.pexels.com/photos/3214972/pexels-photo-3214972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            alt=""
+          />
+          <div class="caption letf-align">
+            <h2 class="grey-text text-darken-3">We Work With All Budgets</h2>
+            <h5 class="light grey-text text-darken-4 hide-on-small-only">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate architecto magni rerum.
+            </h5>
+            <a href="#!" class="btn btn-large">Learn More</a>
+          </div>
+        </li>
+        <li>
+          <img
+            src="https://images.pexels.com/photos/3099153/pexels-photo-3099153.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            alt=""
+          />
+          <div class="caption right-align">
+            <h2 class="grey-text text-darken-3">Group And Individual Getaways</h2>
+            <h5 class="light grey-text text-darken-4 hide-on-small-only">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate architecto magni rerum.
+            </h5>
+            <a href="#!" class="btn btn-large">Learn More</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
     <!--Import jQuery before materialize.js-->
     <script
       type="text/javascript"
@@ -57,7 +105,16 @@
     <script>
       $(document).ready(function() {
         // Custom JS & jQuery here
+        //Init Side Nav
         $(".button-collapse").sideNav();
+
+        //Init Slider
+        $(".slider").slider({
+          indicators: false,
+          height: 500,
+          transition: 500,
+          interval: 6000
+        });
       });
     </script>
   </body>
