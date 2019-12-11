@@ -34,3 +34,30 @@
   border-bottom: #333 solid 5px;
   min-height: 180px;
 }
+.section-podcast {
+  position: relative;
+  background: url(../img/circuit.jpg);
+  background-size: cover;
+  background-position: center;
+  border-top: #333 solid 5px;
+  border-bottom: #333 solid 5px;
+  min-height: 160px;
+}
+
+.section-podcast a {
+  margin-top: 40px;
+}
+
+.section-podcast .primary-overlay{
+  background: rgba(112, 81, 176, 0.9);
+}
+
+@media(max-width: 600px) {
+  .section-developers,
+  .section-podcast {
+    min-height: 240px;
+  }
+  .section-podcast a {
+    margin-top: 10px;
+  }
+}
