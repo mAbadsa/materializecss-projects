@@ -60,6 +60,11 @@
   background: rgba(112, 81, 176, 0.9);
 }
 
+
+.carousel-item p {
+  font-size: 20px !important;
+}
+
 @media(max-width: 600px) {
   .section-developers,
   .section-podcast {
