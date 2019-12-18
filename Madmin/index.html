@@ -145,6 +145,19 @@
       </div>
     </section>
 
+    <!-- Preloader -->
+    <div class="loader preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+
     <!--Import jQuery before materialize.js-->
     <script
       type="text/javascript"
@@ -160,6 +173,9 @@
           // Show Sections
           $('.section').fadeIn();
 
+          // Hide Preloader
+          $('.loader').fadeOut(100);
+          
           //Init Side nav
           $(".button-collapse").sideNav();
   
@@ -177,7 +193,7 @@
           });
   
         });
-      }, 300);
+      }, 500);
     </script>
   </body>
 </html>
