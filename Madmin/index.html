@@ -155,8 +155,46 @@
         </div>
         <div class="col s12 m6 l4">
           <!-- Latest Comments -->
-          <ul class="collections with-header latest-comments">
-            
+          <ul class="collection with-header latest-comments">
+            <li class="collection-header">
+              <h5>Latest Comments</h5>
+            </li>
+            <li class="collection-item avatar">
+              <img src="img/person1.jpg" alt="" class="circle" />
+              <span class="title">Jhon Doe</span>
+              <p class="truncate">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatibus nam error ducimus voluptas omnis vel optio iusto
+                est aperiam ea, sunt iure, similique ad architecto, beatae vero
+                dignissimos laboriosam rerum?
+              </p>
+              <a href="" class="approve green-text">Approve</a>
+              <a href="" class="deny red-text">Deny</a>
+            </li>
+            <li class="collection-item avatar">
+              <img src="img/person2.jpg" alt="" class="circle" />
+              <span class="title">Steve Smith</span>
+              <p class="truncate">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatibus nam error ducimus voluptas omnis vel optio iusto
+                est aperiam ea, sunt iure, similique ad architecto, beatae vero
+                dignissimos laboriosam rerum?
+              </p>
+              <a href="" class="approve green-text">Approve</a>
+              <a href="" class="deny red-text">Deny</a>
+            </li>
+            <li class="collection-item avatar">
+              <img src="img/person3.jpg" alt="" class="circle" />
+              <span class="title">Alen Williams</span>
+              <p class="truncate">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatibus nam error ducimus voluptas omnis vel optio iusto
+                est aperiam ea, sunt iure, similique ad architecto, beatae vero
+                dignissimos laboriosam rerum?
+              </p>
+              <a href="" class="approve green-text">Approve</a>
+              <a href="" class="deny red-text">Deny</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -167,9 +205,11 @@
       <div class="spinner-layer spinner-blue-only">
         <div class="circle-clipper left">
           <div class="circle"></div>
-        </div><div class="gap-patch">
+        </div>
+        <div class="gap-patch">
           <div class="circle"></div>
-        </div><div class="circle-clipper right">
+        </div>
+        <div class="circle-clipper right">
           <div class="circle"></div>
         </div>
       </div>
@@ -186,32 +226,36 @@
     <script src="js/chart.js"></script>
     <script>
       // Hide Sections
-      $('.section').hide();
-      
+      $(".section").hide();
+
       setTimeout(() => {
         $(document).ready(function() {
           // Show Sections
-          $('.section').fadeIn();
+          $(".section").fadeIn();
 
           // Hide Preloader
-          $('.loader').fadeOut(100);
-          
+          $(".loader").fadeOut(100);
+
           //Init Side nav
           $(".button-collapse").sideNav();
-  
+
           // Counter
-          $('.count').each(function () {
-            $(this).prop('Counter', 0).animate({
-              Counter: $(this).text()
-            }, {
-                duration: 1000,
-                easing: 'swing',
-                step: function (now) {
-                  $(this).text(Math.ceil(now));
+          $(".count").each(function() {
+            $(this)
+              .prop("Counter", 0)
+              .animate(
+                {
+                  Counter: $(this).text()
+                },
+                {
+                  duration: 1000,
+                  easing: "swing",
+                  step: function(now) {
+                    $(this).text(Math.ceil(now));
+                  }
                 }
-            });
+              );
           });
-  
         });
       }, 500);
     </script>
