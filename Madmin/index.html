@@ -257,7 +257,17 @@
               );
           });
         });
-      }, 500);
+        //  Comments - Approve & Deny
+        $('.approve').click(function(e) {
+          Materialize.toast('Comment Approve', 3000);
+          e.preventDefault();
+        })
+
+        $('.deny').click(function(e) {
+          Materialize.toast('Comment Denied', 3000);
+          e.preventDefault();
+        })
+      }, 1000);
     </script>
   </body>
 </html>
