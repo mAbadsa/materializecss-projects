@@ -273,6 +273,12 @@
       </div>
     </section>
 
+    <!-- Section: Footer -->
+
+    <footer class="section blue darken-2 white-text center">
+      <p>Madmin Panel Copyright &copy; 2020</p>
+    </footer>
+
     <!-- Preloader -->
     <div class="loader preloader-wrapper big active">
       <div class="spinner-layer spinner-blue-only">
@@ -357,13 +363,13 @@
         Materialize.toast('Todo Added', 3000);
         e.preventDefault();
       })
+
       // Delete Todos
       $('.todos').on('click', '.delete', function (e) {
         $(this).parent().parent().remove();
         Materialize.toast("Todo Removed", 2000);
         e.preventDefault();
       })
-
     </script>
   </body>
 </html>
