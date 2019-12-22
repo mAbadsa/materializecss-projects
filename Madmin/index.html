@@ -251,7 +251,7 @@
                   <input type="text" id="todo" placeholder="Add Todo...">
                 </div>
               </form>
-              <ul class="collection todo">
+              <ul class="collection todos">
                 <li class="collection-item">
                   <div>Todo One
                     <a href="#!" class="secondary-content delete">
@@ -341,6 +341,29 @@
           e.preventDefault();
         })
       }, 1000);
+
+      // Quick Todos
+      $('#todo-form').submit(function (e) {
+        const output = `<li class="collection-item">
+            <div>${$('#todo').val()}
+              <a href="#!" class="secondary-content delete">
+                <i class="material-icons">close</i>
+              </a>
+            </div>
+          </li>`;
+
+        $('.todos').append(output);
+
+        Materialize.toast('Todo Added', 3000);
+        e.preventDefault();
+      })
+      // Delete Todos
+      $('.todos').on('click', '.delete', function (e) {
+        $(this).parent().parent().remove();
+        Materialize.toast("Todo Removed", 2000);
+        e.preventDefault();
+      })
+
     </script>
   </body>
 </html>
