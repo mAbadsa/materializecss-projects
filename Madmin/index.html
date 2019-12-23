@@ -286,21 +286,52 @@
       </a>
         <ul>
           <li>
-            <a href="#post-model" class="model-trigger btn-floating blue">
+            <a href="#post-modal" class="modal-trigger btn-floating blue">
               <i class="material-icons">mode_edit</i>
             </a>
           </li>
           <li>
-            <a href="#category-model" class="model-trigger btn-floating blue">
+            <a href="#category-modal" class="modal-trigger btn-floating blue">
               <i class="material-icons">folder</i>
             </a>
           </li>
           <li>
-            <a href="#user-model" class="model-trigger btn-floating blue">
+            <a href="#user-modal" class="modal-trigger btn-floating blue">
               <i class="material-icons">supervisor_account</i>
             </a>
           </li>
         </ul>
+    </div>
+
+    <!-- Add Post modal -->
+    <div id="post-modal" class="modal">
+      <div class="modal-content">
+        <h4>Add Post</h4>
+        <form>
+          <div class="input-field">
+            <input type="text" name="" id="title">
+            <label for="title">Title</label>
+          </div>
+          <div class="input-field">
+            <select name="" id="">
+              <option value="" disabled selected>Select Option</option>
+              <option value="1">Web Development</option>
+              <option value="2">Graphic Design</option>
+              <option value="3">Tech Gadgets</option>
+              <option value="4">Other</option>
+            </select>
+            <label>Category</label>
+          </div>
+          <div class="input-field">
+            <textarea name="body" id="body" class="materialize-textarea">
+            </textarea>
+            <label for="body">Body</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action waves-effect waves-blue btn blue">Submit</a>
+      </div>
     </div>
 
     <!-- Preloader -->
@@ -341,6 +372,9 @@
 
           //Init Side nav
           $(".button-collapse").sideNav();
+
+          //Modal Init
+          $('.modal').modal();
 
           // Counter
           $(".count").each(function() {
@@ -393,7 +427,7 @@
         $(this).parent().parent().remove();
         Materialize.toast("Todo Removed", 2000);
         e.preventDefault();
-      })
+      });
     </script>
   </body>
 </html>
