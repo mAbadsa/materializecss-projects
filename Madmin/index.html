@@ -220,21 +220,27 @@
                     <td>Post One</td>
                     <td>Web Development</td>
                     <td>
-                      <a href="details.html" class="btn blue lighten-2">Details</a>
+                      <a href="details.html" class="btn blue lighten-2"
+                        >Details</a
+                      >
                     </td>
                   </tr>
                   <tr>
                     <td>Post Two</td>
                     <td>Graphic Design</td>
                     <td>
-                      <a href="details.html" class="btn blue lighten-2">Details</a>
+                      <a href="details.html" class="btn blue lighten-2"
+                        >Details</a
+                      >
                     </td>
                   </tr>
                   <tr>
                     <td>Post Three</td>
                     <td>Graphic Design</td>
                     <td>
-                      <a href="details.html" class="btn blue lighten-2">Details</a>
+                      <a href="details.html" class="btn blue lighten-2"
+                        >Details</a
+                      >
                     </td>
                   </tr>
                 </tbody>
@@ -248,19 +254,21 @@
               <span class="card-title">Quick Todos</span>
               <form id="todo-form">
                 <div class="input-field">
-                  <input type="text" id="todo" placeholder="Add Todo...">
+                  <input type="text" id="todo" placeholder="Add Todo..." />
                 </div>
               </form>
               <ul class="collection todos">
                 <li class="collection-item">
-                  <div>Todo One
+                  <div>
+                    Todo One
                     <a href="#!" class="secondary-content delete">
                       <i class="material-icons">close</i>
                     </a>
                   </div>
                 </li>
                 <li class="collection-item">
-                  <div>Todo One
+                  <div>
+                    Todo One
                     <a href="#!" class="secondary-content delete">
                       <i class="material-icons">close</i>
                     </a>
@@ -284,23 +292,23 @@
       <a class="btn-floating btn-large red">
         <i class="material-icons">add</i>
       </a>
-        <ul>
-          <li>
-            <a href="#post-modal" class="modal-trigger btn-floating blue">
-              <i class="material-icons">mode_edit</i>
-            </a>
-          </li>
-          <li>
-            <a href="#category-modal" class="modal-trigger btn-floating blue">
-              <i class="material-icons">folder</i>
-            </a>
-          </li>
-          <li>
-            <a href="#user-modal" class="modal-trigger btn-floating blue">
-              <i class="material-icons">supervisor_account</i>
-            </a>
-          </li>
-        </ul>
+      <ul>
+        <li>
+          <a href="#post-modal" class="modal-trigger btn-floating blue">
+            <i class="material-icons">mode_edit</i>
+          </a>
+        </li>
+        <li>
+          <a href="#category-modal" class="modal-trigger btn-floating blue">
+            <i class="material-icons">folder</i>
+          </a>
+        </li>
+        <li>
+          <a href="#user-modal" class="modal-trigger btn-floating blue">
+            <i class="material-icons">supervisor_account</i>
+          </a>
+        </li>
+      </ul>
     </div>
 
     <!-- Add Post modal -->
@@ -309,7 +317,7 @@
         <h4>Add Post</h4>
         <form>
           <div class="input-field">
-            <input type="text" name="" id="title">
+            <input type="text" name="" id="title" />
             <label for="title">Title</label>
           </div>
           <div class="input-field">
@@ -330,7 +338,9 @@
         </form>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-action waves-effect waves-blue btn blue">Submit</a>
+        <a href="#!" class="modal-action waves-effect waves-blue btn blue"
+          >Submit</a
+        >
       </div>
     </div>
 
@@ -357,6 +367,7 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
     <script src="js/chart.js"></script>
     <script>
       // Hide Sections
@@ -370,11 +381,13 @@
           // Hide Preloader
           $(".loader").fadeOut(100);
 
-          //Init Side nav
+          // Init Side nav
           $(".button-collapse").sideNav();
 
-          //Modal Init
-          $('.modal').modal();
+          // Modal Init
+          $(".modal").modal();
+          // Select Init
+          $("select").material_select();
 
           // Counter
           $(".count").each(function() {
@@ -395,39 +408,42 @@
           });
         });
         //  Comments - Approve & Deny
-        $('.approve').click(function(e) {
-          Materialize.toast('Comment Approve', 3000);
+        $(".approve").click(function(e) {
+          Materialize.toast("Comment Approve", 3000);
           e.preventDefault();
-        })
+        });
 
-        $('.deny').click(function(e) {
-          Materialize.toast('Comment Denied', 3000);
+        $(".deny").click(function(e) {
+          Materialize.toast("Comment Denied", 3000);
           e.preventDefault();
-        })
+        });
+        // Quick Todos
+        $("#todo-form").submit(function(e) {
+          const output = `<li class="collection-item">
+                    <div>${$("#todo").val()}
+                      <a href="#!" class="secondary-content delete">
+                        <i class="material-icons">close</i>
+                      </a>
+                    </div>
+                  </li>`;
+
+          $(".todos").append(output);
+
+          Materialize.toast("Todo Added", 3000);
+          e.preventDefault();
+        });
+
+        // Delete Todos
+        $(".todos").on("click", ".delete", function(e) {
+          $(this)
+            .parent()
+            .parent()
+            .remove();
+          Materialize.toast("Todo Removed", 2000);
+          e.preventDefault();
+        });
+        CKEDITOR.replace('body');
       }, 1000);
-
-      // Quick Todos
-      $('#todo-form').submit(function (e) {
-        const output = `<li class="collection-item">
-            <div>${$('#todo').val()}
-              <a href="#!" class="secondary-content delete">
-                <i class="material-icons">close</i>
-              </a>
-            </div>
-          </li>`;
-
-        $('.todos').append(output);
-
-        Materialize.toast('Todo Added', 3000);
-        e.preventDefault();
-      })
-
-      // Delete Todos
-      $('.todos').on('click', '.delete', function (e) {
-        $(this).parent().parent().remove();
-        Materialize.toast("Todo Removed", 2000);
-        e.preventDefault();
-      });
     </script>
   </body>
 </html>
