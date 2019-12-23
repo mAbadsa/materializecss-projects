@@ -3,3 +3,7 @@
     left: 47%;
     top: 40%;
 }
+
+.modal {
+    max-height: 75% !important;
+}
